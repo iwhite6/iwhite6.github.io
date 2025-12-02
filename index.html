@@ -3,26 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Dev Project</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>CS351 Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1>Simple Web Calculator</h1>
-        
-        <p>
-            For my project, I'm going to create a simple calculator using HTML, CSS, and JavaScript.
-        </p>
-        
-        <p>
-            The main goal is to build a calculator that can handle basic arithmetic. It will have a clean interface with number buttons (0-9) and buttons for the standard operations: add, subtract, multiply, and divide. I'll also include a display at the top that shows the numbers as you type them and the final answer, just like a real calculator. Of course, I'll add a clear button to reset everything.
-        </p>
+    <div class="calculator">
+        <div class="display-screen">
+            <div class="previous-operand" id="previous-operand"></div>
+            <div class="current-operand" id="current-operand">0</div>
+        </div>
 
-        <p>
-            To make it a bit better, I'm planning to add a couple of enhanced features. First, I want to make it work with the keyboard, so you can just type in your math problem instead of having to click all the buttons. I also think it would be cool to add basic memory functions, like an "M+" button to add the current number to memory and an "M−" button to subtract from it.
-        </p>
+        <div class="buttons-grid">
+            <!-- Memory Functions -->
+            <button class="memory-btn" onclick="memoryAdd()">M+</button>
+            <button class="memory-btn" onclick="memorySubtract()">M-</button>
+            <button class="memory-btn span-two" onclick="memoryRecall()">MR (Recall)</button>
+
+            <!-- Main Calculator Buttons -->
+            <button class="clear-btn span-two" onclick="clearDisplay()">AC</button>
+            <button class="delete-btn" onclick="deleteNumber()">DEL</button>
+            <button class="operator-btn" onclick="chooseOperation('/')">÷</button>
+            
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button class="operator-btn" onclick="chooseOperation('*')">×</button>
+            
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button class="operator-btn" onclick="chooseOperation('-')">−</button>
+            
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button class="operator-btn" onclick="chooseOperation('+')">+</button>
+            
+            <button onclick="appendNumber('.')">.</button>
+            <button onclick="appendNumber('0')">0</button>
+            <button class="equals-btn span-two" onclick="compute()">=</button>
+        </div>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
