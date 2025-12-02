@@ -1,5 +1,5 @@
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f2f5;
     display: flex;
     justify-content: center;
@@ -8,25 +8,105 @@ body {
     margin: 0;
 }
 
-.container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    text-align: left;
+.calculator {
+    background-color: #333;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 320px;
 }
 
-h1 {
-    font-size: 24px;
-    color: #1c1e21;
-    border-bottom: 1px solid #dddfe2;
-    padding-bottom: 10px;
-    margin-top: 0;
+.display-screen {
+    background-color: #eee;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: right;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
-p {
-    font-size: 16px;
-    line-height: 1.6;
+.previous-operand {
+    color: #666;
+    font-size: 1.2rem;
+    min-height: 24px; 
+}
+
+.current-operand {
+    color: #000;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    height: 60px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    background-color: #fff;
     color: #333;
 }
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:hover {
+    background-color: #e6e6e6;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.operator-btn {
+    background-color: #ff9f43;
+    color: white;
+    font-weight: bold;
+}
+
+.operator-btn:hover {
+    background-color: #e58e3c;
+}
+
+.clear-btn, .delete-btn {
+    background-color: #ee5253;
+    color: white;
+}
+
+.clear-btn:hover, .delete-btn:hover {
+    background-color: #d64647;
+}
+
+.memory-btn {
+    background-color: #5f27cd;
+    color: white;
+    font-size: 1rem;
+}
+
+.memory-btn:hover {
+    background-color: #4a1e9e;
+}
+
+.equals-btn {
+    background-color: #10ac84;
+    color: white;
+}
+
+.equals-btn:hover {
+    background-color: #0d8b6a;
+}
+
+
